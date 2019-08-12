@@ -7,6 +7,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { NavHomeComponent } from './components/shared/nav-home/nav-home.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { UploadmediaComponent } from './components/uploadmedia/uploadmedia.component';
+import { MultipleuploadmediaComponent } from './components/multipleuploadmedia/multipleuploadmedia.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { UploadmediaComponent } from './components/uploadmedia/uploadmedia.compo
     RegisterComponent,
     NavHomeComponent,
     NavbarComponent,
-    UploadmediaComponent
+    UploadmediaComponent,
+    MultipleuploadmediaComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule
