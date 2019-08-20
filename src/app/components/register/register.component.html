@@ -9,24 +9,24 @@
                 
                 <h2 class="text-center">Sign Up</h2>
                 <br><br>
-                <form action="">
+                <form (ngSubmit)="onSignUp()">
                     <div class="form-group">
-                        <input type="text" name="" id="" class="form-control mx-auto" placeholder=" Username">
+                        <input type="text" name="userName" [(ngModel)]="userName" id="" class="form-control mx-auto" placeholder=" Username">
                         <br>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="" id="" class="form-control" placeholder=" Password">
+                        <input type="password" name="password" [(ngModel)]="password" id="" class="form-control" placeholder=" Password">
                         <br>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="" id="" class="form-control" placeholder=" Confirm Password">
+                        <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" id="" class="form-control" placeholder=" Confirm Password">
                         <br>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" name="" id="" class="form-control" placeholder="E-Mail">
+                        <input type="email" name="eMail" [(ngModel)]="eMail" id="" class="form-control" placeholder="E-Mail">
                         <br>
                     </div>
 
@@ -35,7 +35,7 @@
                     </div>
 
                     <hr>
-                    <a href="">Already Registered ? Click Here</a>
+                    <a routerLink="/login">Already Registered ? Click Here</a>
                     <br><br>
                 </form>
             </div>

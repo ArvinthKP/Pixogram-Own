@@ -8,14 +8,14 @@
             <div class="col-lg-6 card login-form ">
                 <h2 class="text-center">Login</h2>
                 <br><br>
-                <form action="">
+                <form (ngSubmit)="onLogin()">
                     <div class="form-group">
-                        <input type="text" name="" id="" class="form-control mx-auto" placeholder="Enter the Username">
+                        <input type="text" name="userName" [(ngModel)]="userName"  class="form-control mx-auto" placeholder="Enter the Username">
                         <br>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="" id="" class="form-control" placeholder="Enter the Password">
+                        <input type="password" name="password" [(ngModel)]="password"  class="form-control" placeholder="Enter the Password">
                         <br>
                     </div>
 
@@ -24,7 +24,7 @@
                     </div>
 
                     <hr>
-                    <a href="">New User ? Click Here</a>
+                    <a routerLink="/signup">New User ? Click Here</a>
                 </form>
             </div>
             <div class="col-lg-3"></div>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -9,6 +10,10 @@ import { UploadmediaComponent } from './components/uploadmedia/uploadmedia.compo
 import { MultipleuploadmediaComponent } from './components/multipleuploadmedia/multipleuploadmedia.component';
 import { HomeComponent } from './components/home/home.component';
 import {AppRoutingModule} from './approuting';
+import { HttpClientModule } from '@angular/common/http';
+import { MymediaComponent } from './components/mymedia/mymedia.component';
+import { FollowersFollowingComponent } from './components/followers-following/followers-following.component';
+import { AccountComponent } from './components/account/account.component';
 
 
 @NgModule({
@@ -20,10 +25,13 @@ import {AppRoutingModule} from './approuting';
     NavbarComponent,
     UploadmediaComponent,
     MultipleuploadmediaComponent,
-    HomeComponent
+    HomeComponent,
+    MymediaComponent,
+    FollowersFollowingComponent,
+    AccountComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule
+    BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
