@@ -12,7 +12,7 @@
                 <form (ngSubmit)="onSignUp()">
                     <div class="form-group">
                         <input type="text" name="userName" [(ngModel)]="userName" id="" class="form-control mx-auto" placeholder=" Username" required>
-                        <small *ngIf="usernameNotAvailable" style="color: red;">Username Not Available</small>
+                        <small *ngIf="usernameNotAvailable" style="color: red;">Username Not Available Please Refresh The Page and Try Again</small>
                         <br>
                     </div>
 

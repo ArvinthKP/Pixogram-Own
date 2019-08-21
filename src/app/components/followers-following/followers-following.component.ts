@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FollowServiceService  } from 'src/Services/follow-service.service';
 import { Follow } from 'src/Model/Follow';
 import {  UserAuthenticationService } from 'src/Services/user-authentication.service';
+import {   User } from "src/Model/User";
+import { DataService} from "src/Services/data.service";
 
 @Component({
   selector: 'app-followers-following',
@@ -11,6 +13,7 @@ import {  UserAuthenticationService } from 'src/Services/user-authentication.ser
 })
 export class FollowersFollowingComponent implements OnInit {
 
+  searched:boolean=false;
   followers: any;
   followings: any;
   userId: number;
@@ -18,11 +21,17 @@ export class FollowersFollowingComponent implements OnInit {
   followersUserDetails;
   followingsUserDetails;
   toggle: Map<number, boolean>;
+  searchUser:string;
+  users:User[];
+  foundUser:User;
 
-  constructor(private router: Router, private follow: FollowServiceService, private userService: UserAuthenticationService) { }
+  constructor(private router: Router, private follow: FollowServiceService, private userService: UserAuthenticationService, private dataService:DataService) { }
 
   ngOnInit() {
+    this.userService.getUsers().subscribe(response => this.users = response, error => alert(`${error.message}\nWaiting for response from server`));
+    console.log(this.users);
     let userId = localStorage.getItem("userId");
+    console.log(userId);
     this.userId = parseInt(userId);
     if (!userId) {
       alert("Logged out of your account, Please Login again")
@@ -31,6 +40,22 @@ export class FollowersFollowingComponent implements OnInit {
     }
     this.fetchFollowers();
     this.fetchFollowings();
+    
+  }
+
+  searchUserName()
+  {
+    this.searched=true;
+    console.log(this.users);
+    for (let i = 0; i < this.users.length; i++){
+      if(this.searchUser===this.users[i].name){
+        this.foundUser=this.users[i];
+        console.log(this.foundUser);
+        break; 
+      }
+    }
+
+
   }
 
   fetchFollowers() {
@@ -72,6 +97,7 @@ export class FollowersFollowingComponent implements OnInit {
       this.fetchFollowings();
     });
     this.toggle.set(followId, false);
+    this.router.navigate(['followers']);
   }
   followUser(followId) {
     let followObj = new Follow(this.userId, followId);
@@ -81,6 +107,7 @@ export class FollowersFollowingComponent implements OnInit {
       this.fetchFollowings();
     });
     this.toggle.set(followId, true);
+    this.router.navigate(['followers']);
   }
 
 }
