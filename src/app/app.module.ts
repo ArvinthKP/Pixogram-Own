@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MymediaComponent } from './components/mymedia/mymedia.component';
 import { FollowersFollowingComponent } from './components/followers-following/followers-following.component';
 import { AccountComponent } from './components/account/account.component';
+import { MediaDetailComponent } from './components/media-detail/media-detail.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { AccountComponent } from './components/account/account.component';
     HomeComponent,
     MymediaComponent,
     FollowersFollowingComponent,
-    AccountComponent
+    AccountComponent,
+    MediaDetailComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpClientModule,

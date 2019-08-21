@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+<section class="container">
+    <div class="row m-4">
+        <h2>Media Details</h2>
+        <div class="col-lg-8 mt-2">
+            <div class="secondary-shadow bg-light p-4">
+                <h5 class="h2">{{media.title}}</h5>
+                <div class="media-container">
+                    <img class="card-img-top img-fluid" [src]="media.url" alt="Card image cap">
+                    <div class="bottom-right d-flex justify-content-end w-100">
+                        <p class="mr-3"><i class="fa fa-thumbs-up"></i></p>
+                        <p class="mr-3"><i class="fa fa-thumbs-down"></i></p>
+                    </div>
+                </div>
+            </div>
+            <div class="secondary-shadow bg-light p-4 mt-2">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="row">
+                        <div class="col d-flex justify-content-center lead">
+                            <button class="badge badge-dark m-1">Sepia</button>
+                            <button class="badge badge-dark m-1">Gray</button>
+                            <button class="badge badge-dark m-1">Brightness</button>
+                            <button class="badge badge-dark m-1">Contrast</button>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-5">
+                        <label for="description" class="col-3 col-form-label">Description</label>
+                        <div class="col-9">
+                            <textarea [(ngModel)]="description" class="form-control" rows="5" name="description"
+                                id="description"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="tags" class="col-3 col-form-label">Tags</label>
+                        <div class="col-9">
+                            <input [(ngModel)]="tags" type="text" class="form-control" name="tags" id="tags">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-md-offset-3">
+                            <textarea placeholder="Write your comment here!" class=" form-control"></textarea>
+                            <form class="form-inline">
+                                <div class="btn-group">
+                                    <button class="btn" type="button"><span class="fa fa-reply"></span></button>
+                                    <button class="btn" type="button"><span class="fa fa-thumbs-up"></span></button>
+                                    <button class="btn" type="button"><span class="fa fa-thumbs-down"></span></button>
+                                    <button class="btn" type="button"><span class="fa fa-trash"></span></button>
+                                </div>
+                                <a class="btn btn-dark pull-right" routerLink="/media-detail">Post</a>
+                            </form>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

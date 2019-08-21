@@ -1,1 +1,64 @@
 <app-navbar></app-navbar>
+
+<div class="row align-items-center justify-content-between">
+        <div class="col-auto">
+            <h5 class="h2" *ngIf="opt1.checked === true">Followers</h5>
+            <h5 class="h2" *ngIf="opt2.checked === true">Following</h5>
+        </div>
+        <div class="col-auto">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-secondary">
+                    <input [(ngModel)]="options" #opt1 type="radio" name="options" id="option1" autocomplete="off"
+                        (click)="fetchFollowers()">
+                    Followers
+                </label>
+                <label class="btn btn-secondary active">
+                    <input [(ngModel)]="options" #opt2 type="radio" name="options" id="option2" autocomplete="off"
+                        (click)="fetchFollowings()">
+                    Following
+                </label>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="opt1.checked === true">
+        <div class="row mt-5">
+            <div class="col-md-6 col-12" *ngFor="let f of followersUserDetails">
+                <div class="card mb-3">
+                    <div class="media-container">
+                        <img class="card-img-top img-fluid" src="https://dummyimage.com/600x600/cfcfcf/"
+                            alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="badge badge-dark"><span class="lead">@{{f.name}}</span></p>
+                        <button class="btn btn-dark m-1 form-control" *ngIf="toggle.get(f.id)"
+                            (click)="unfollowUser(f.id)">Unfollow</button>
+                        <button class="btn btn-dark m-1 form-control" *ngIf="!toggle.get(f.id)"
+                            (click)="followUser(f.id)">Follow</button>
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col-sm-4 -->
+        </div>
+    </div>
+    <div *ngIf="opt2.checked === true">
+        <div class="row mt-5">
+            <div class="col-md-6 col-12" *ngFor="let f of followingsUserDetails">
+                <div class="card mb-3">
+                    <div class="media-container">
+                        <img class="card-img-top img-fluid" src="https://dummyimage.com/600x600/cfcfcf/"
+                            alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="badge badge-dark"><span class="lead">@{{f.name}}</span></p>{{toggle.get(f.name)}}
+                        <button class="btn btn-dark m-1 form-control" *ngIf="toggle.get(f.id)"
+                            (click)="unfollowUser(f.id)">Unfollow</button>
+                        <button class="btn btn-dark m-1 form-control" *ngIf="!toggle.get(f.id)"
+                            (click)="followUser(f.id)">Follow</button>
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col-sm-4 -->
+        </div>
+    </div>

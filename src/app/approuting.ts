@@ -8,6 +8,7 @@ import { UploadmediaComponent } from 'src/app/components/uploadmedia/uploadmedia
 import { FollowersFollowingComponent } from "src/app/components/followers-following/followers-following.component";
 import { MymediaComponent } from "src/app/components/mymedia/mymedia.component";
 import { AccountComponent } from "src/app/components/account/account.component";
+import { MediaDetailComponent } from "src/app/components/media-detail/media-detail.component";
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
     { path: 'mupload', component: MultipleuploadmediaComponent },
     { path: 'mymedia', component: MymediaComponent },
     { path: 'followers', component: FollowersFollowingComponent },
-    { path: 'account', component: AccountComponent}
+    { path: 'account', component: AccountComponent},
+    { path: 'media-detail', component: MediaDetailComponent}
     
 ];
 

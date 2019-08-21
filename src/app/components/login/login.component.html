@@ -10,12 +10,14 @@
                 <br><br>
                 <form (ngSubmit)="onLogin()">
                     <div class="form-group">
-                        <input type="text" name="userName" [(ngModel)]="userName"  class="form-control mx-auto" placeholder="Enter the Username">
+                        <input type="text" name="userName" [(ngModel)]="userName"  class="form-control mx-auto" placeholder="Enter the Username" required>
+                        <small *ngIf="invalidLogin" style="color:red;">Please Check Username And Password</small>
                         <br>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="password" [(ngModel)]="password"  class="form-control" placeholder="Enter the Password">
+                        <input type="password" name="password" [(ngModel)]="password"  class="form-control" placeholder="Enter the Password" required>
+                        <!-- <small *ngIf="correctUserName">Please Check Password</small> -->
                         <br>
                     </div>
 

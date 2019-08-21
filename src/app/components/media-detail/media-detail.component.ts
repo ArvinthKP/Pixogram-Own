@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
+import { Media } from "src/Model/Media";
 import { DataService } from "src/Services/data.service";
-import { Media } from "src/Model/Media"; 
 
 @Component({
-  selector: 'app-account',
-  templateUrl: './account.component.html',
-  styleUrls: ['./account.component.css']
+  selector: 'app-media-detail',
+  templateUrl: './media-detail.component.html',
+  styleUrls: ['./media-detail.component.css']
 })
-export class AccountComponent implements OnInit {
+export class MediaDetailComponent implements OnInit {
 
   media: Media;
   description: String;
@@ -26,4 +26,7 @@ export class AccountComponent implements OnInit {
     console.log(this.media);
   }
 
+  onSubmit() {
+
+  }
 }

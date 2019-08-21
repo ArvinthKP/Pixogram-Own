@@ -11,22 +11,24 @@
                 <br><br>
                 <form (ngSubmit)="onSignUp()">
                     <div class="form-group">
-                        <input type="text" name="userName" [(ngModel)]="userName" id="" class="form-control mx-auto" placeholder=" Username">
+                        <input type="text" name="userName" [(ngModel)]="userName" id="" class="form-control mx-auto" placeholder=" Username" required>
+                        <small *ngIf="usernameNotAvailable" style="color: red;">Username Not Available</small>
                         <br>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="password" [(ngModel)]="password" id="" class="form-control" placeholder=" Password">
+                        <input type="password" name="password" [(ngModel)]="password" id="" class="form-control" placeholder=" Password" required>
                         <br>
                     </div>
 
                     <div class="form-group">
-                        <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" id="" class="form-control" placeholder=" Confirm Password">
+                        <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" id="" class="form-control" placeholder=" Confirm Password" required>
+                        <small *ngIf="validPassword" style="color: red;">Please Check The Password</small>
                         <br>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" name="eMail" [(ngModel)]="eMail" id="" class="form-control" placeholder="E-Mail">
+                        <input type="email" name="eMail" [(ngModel)]="eMail" id="" class="form-control" placeholder="E-Mail" required>
                         <br>
                     </div>
 
