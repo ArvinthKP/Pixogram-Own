@@ -26,9 +26,10 @@ export class LoginComponent implements OnInit {
   }
 
   checkLogin() {
+    //this.invalidLogin=false;
     for (let i = 0; i < this.users.length; i++) {
       if (this.users[i].name === this.userName && this.users[i].password === this.password) {
-
+        console.log(this.users[i].id);
         this.dataService.sendUserDetails(this.users[i])
         this.router.navigate(['mymedia']);
         this.invalidLogin = false;

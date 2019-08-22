@@ -1,9 +1,47 @@
 <app-navbar></app-navbar>
+<br>
+<br>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 card signup-form ">
+                <br><br>
+                <h2 class="text-center">Profile Update</h2>
+                <br><br>
+                <form (ngSubmit)="onUpdate()">
+                    <div class="form-group">
+                        <input type="text" name="userName" [(ngModel)]="userName" id="" class="form-control mx-auto disabled" placeholder=" Username" disabled>
+                        <small *ngIf="usernameNotAvailable" style="color: red;">Username Not Please Try Again</small>
+                        <br>
+                    </div>
 
-<div class="row">
-    <div class="col-lg-3">
-        <h2>{{media.url}}</h2>
+                    <div class="form-group">
+                        <input type="password" name="password" [(ngModel)]="password" id="" class="form-control" placeholder=" Password" required>
+                        <br>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" id="" class="form-control" placeholder=" Confirm Password" required>
+                        <small *ngIf="validPassword" style="color: red;">Please Check The Password</small>
+                        <br>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" name="eMail" [(ngModel)]="eMail" id="" class="form-control" placeholder="E-Mail" required>
+                        <br>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+
+                    <hr>
+                  <!-- //  <a routerLink="/login">Already Registered ? Click Here</a> -->
+                    <br><br>
+                </form>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
     </div>
-    <div class="col-lg-6"></div>
-    <div class="col-lg-3"></div>
-</div>
+</section>

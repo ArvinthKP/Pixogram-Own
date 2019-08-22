@@ -9,8 +9,10 @@ import { User } from "src/Model/User";
 export class DataService {
 
   private mediaDetailsSource = new BehaviorSubject<Media>(new Media());
+  private userDetailsSource;
   mediaDetails$ = this.mediaDetailsSource.asObservable();
-
+  user:User;
+  userDetailsLogined:User;
 
 
   constructor() { }
@@ -23,6 +25,13 @@ export class DataService {
 
   sendUserDetails(u: User) {
     //console.log("Inside Service"+u);
+    this.userDetailsSource= new BehaviorSubject<any>(u);
+    this.userDetailsLogined=this.userDetailsSource.asObservable();
+    this.user=u;
+    this.userDetailsLogined=u;
     return u;
   }
+  
+  
+  
 }

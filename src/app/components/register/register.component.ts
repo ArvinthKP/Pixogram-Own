@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onSignUp() {
+    this.usernameNotAvailable = false;
     let user = new User(this.userName, this.eMail, this.password);
 
     for (let i = 0; i < this.users.length; i++) {
@@ -37,6 +38,8 @@ export class RegisterComponent implements OnInit {
 
     if (this.password !== this.confirmPassword) {
       this.validPassword = true;
+    }else{
+      this.validPassword = false;
     }
     if (this.usernameNotAvailable == false && this.validPassword == false) {
       if (this.userName.length != 0 && this.password.length != 0 && this.eMail.length != 0) {

@@ -8,6 +8,7 @@
                 <div class="media-container">
                     <img class="card-img-top img-fluid" [src]="media.url" alt="Card image cap">
                     <div class="bottom-right d-flex justify-content-end w-100">
+                        <br>
                         <p class="mr-3"><i class="fa fa-thumbs-up"></i></p>
                         <p class="mr-3"><i class="fa fa-thumbs-down"></i></p>
                     </div>
@@ -15,14 +16,7 @@
             </div>
             <div class="secondary-shadow bg-light p-4 mt-2">
                 <form (ngSubmit)="onSubmit()">
-                    <div class="row">
-                        <div class="col d-flex justify-content-center lead">
-                            <button class="badge badge-dark m-1">Sepia</button>
-                            <button class="badge badge-dark m-1">Gray</button>
-                            <button class="badge badge-dark m-1">Brightness</button>
-                            <button class="badge badge-dark m-1">Contrast</button>
-                        </div>
-                    </div>
+                    
                     <div class="form-group row mt-5">
                         <label for="description" class="col-3 col-form-label">Description</label>
                         <div class="col-9">

@@ -18,9 +18,9 @@ export class UploadmediaComponent implements OnInit {
   imgURL: any;
   public message: string;
 
-  title = 'default title';
-  description = 'default description';
-  tags = 'default';
+  title="";
+  description="";
+  tags="";
   userId;
   url;
   date;

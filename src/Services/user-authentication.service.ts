@@ -23,4 +23,8 @@ export class UserAuthenticationService {
   getUserById(userId: number): Observable<User> {
     return this.http.get<User>(`${this.baseUrl}/user/${userId}`);
   }
+  
+  updateUser(user:User):Observable<User>{
+   return this.http.post<User>(`${this.baseUrl}/update`,user);
+  }
 }
